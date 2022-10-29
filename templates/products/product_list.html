@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block content %}
+{% if products %}
+<div class="products">
+  {% for product in products %}
+  <div class="product">
+    <a href="#" id="{{ product.id }}" class="product_image">
+      <image src="/media/{{ product.product_image }}" alt="product" style="width: 100px" />
+    </a>
+    <div>{{ product.expiry_date }}<br>({{ product.expiry_date|timeuntil }})</div>
+    <form action="{% url 'product_delete' product.id %}" method="post" id="delete_form">
+      {% csrf_token %}
+      <button type="submit" class="btn btn_delete" onclick="return confirm('Emin misiniz?');">Sil</button>
+    </form>
+  </div>
+  {% endfor %}
+</div>
+{% else %}
+Eklenmiş ürün bulunamadı.
+{% endif %}
+{% endblock %}

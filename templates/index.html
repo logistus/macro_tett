@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block content %}
+{% if products %}
+<div class="products">
+  {% for product in products %}
+  <div class="product">
+    <image src="/media/{{ product.product_image }}" alt="product" style="width: 125px" />
+    <div>{{ product.expiry_date }}<br>({{ product.expiry_date|timeuntil }})</div>
+    <a href="#" id="{{product.id}}" class="delete">Sil</a>
+  </div>
+  {% endfor %}
+</div>
+{% else %}
+Eklenmiş ürün bulunamadı.
+{% endif %}
+{% endblock %}

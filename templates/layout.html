@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <title>Macrocenter TETT Takip</title>
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <li><a href="{% url 'products' %}">Ürünler</a></li>
+      <li><a href="{% url 'product_add' %}">Ürün Ekle</a></li>
+    </ul>
+  </nav>
+  <div class="content">
+    {% block content %}{% endblock %}
+  </div>
+  <div class="big_image"><img src="" id="big_product_image" alt="" /></div>
+  <script>
+    let product_images = document.querySelectorAll('.product_image');
+    let big_image = document.querySelector('.big_image');
+    big_image.addEventListener('click', function () {
+      big_image.style.display = 'none';
+    });
+
+    for (let i = 0; i < product_images.length; i++) {
+      product_images[i].addEventListener('click', function (e) {
+        console.log(e.target.getAttribute('src'));
+        big_image.style.display = 'block';
+        document.getElementById('big_product_image').src = e.target.getAttribute('src');
+      });
+    }
+  </script>
+</body>
+
+</html>

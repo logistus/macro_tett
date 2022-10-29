@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<form method="post" action="{% url 'product_add' %}" enctype="multipart/form-data" id="add_product_form">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <input type="submit" value="Save" class="btn btn_submit">
+</form>
+{% endblock %}
