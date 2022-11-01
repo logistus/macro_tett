@@ -46,6 +46,11 @@ nav>ul>li>a {
   padding: 10px;
 }
 
+.product_image {
+  width: 100px !important;
+  height: 100px !important;
+}
+
 .btn {
   border: none;
   padding: 0.25rem 0.5rem;
