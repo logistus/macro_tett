@@ -44,6 +44,7 @@ nav>ul>li>a {
   align-items: center;
   border: 1px solid #adadad;
   padding: 10px;
+  overflow: hidden;
 }
 
 .product_image {
