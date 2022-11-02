@@ -16,8 +16,8 @@ class Product(models.Model):
         img.save(self.product_image.path)
 
     def delete(self, *args):
-        super().delete()
         os.remove(os.path.join(settings.MEDIA_ROOT, self.product_image.name))
+        super().delete()
 
     def __str__(self):
         return str(self.expiry_date)
