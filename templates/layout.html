@@ -32,6 +32,8 @@
       product_images[i].addEventListener('click', function (e) {
         product_image = e.target.getAttribute('src');
         big_image.style.display = 'block';
+        big_image.style.width = '100vw';
+        big_image.style.height = '100vh';
         big_image.style.backgroundImage = 'url("' + product_image + '")';
       });
     }
