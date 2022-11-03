@@ -79,9 +79,7 @@ nav>ul>li>a {
   height: 100vh;
   display: none;
   background-color: white;
-}
-
-#big_product_image {
-  width: 100vw;
-  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
 }

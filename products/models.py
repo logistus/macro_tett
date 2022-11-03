@@ -1,19 +1,13 @@
 from django.db import models
-from PIL import Image
+from PIL import Image, ImageOps
 import os
 from django.conf import settings
+from django_resized import ResizedImageField
 
 
 class Product(models.Model):
-    product_image = models.ImageField(upload_to='products')
+    product_image = ResizedImageField(scale=0.5, upload_to='products')
     expiry_date = models.DateField()
-
-    def save(self, *args, **kwargs):
-        super().save()
-        img = Image.open(self.product_image.path)
-        output_size = (150, 150)
-        img.thumbnail(output_size)
-        img.save(self.product_image.path)
 
     def delete(self, *args):
         os.remove(os.path.join(settings.MEDIA_ROOT, self.product_image.name))
