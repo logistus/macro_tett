@@ -8,7 +8,7 @@ class Product(models.Model):
     product_image = ResizedImageField(scale=0.5, upload_to='products')
     expiry_date = models.DateField()
 
-    def delete(self, *args):
+    def delete(self, *args, **kwargs):
         os.remove(os.path.join(settings.MEDIA_ROOT, self.product_image.name))
         super().delete()
 
