@@ -24,13 +24,7 @@
   <script>
     let product_images = document.querySelectorAll('.product_image');
     let big_image = document.querySelector('.big_image');
-    big_image.addEventListener('click', function () {
-      const scrollY = document.body.style.top;
-      big_image.style.display = 'none';
-      document.body.style.position = '';
-      document.body.style.top = '';
-      window.scrollTo(0, parseInt(scrollY || '0') * -1);
-    });
+
 
     for (let i = 0; i < product_images.length; i++) {
       product_images[i].addEventListener('click', function (e) {
@@ -40,9 +34,15 @@
         big_image.style.height = '100vh';
         big_image.style.backgroundImage = 'url("' + product_image + '")';
         document.body.style.position = 'fixed';
-        document.body.style.top = `-${window.scrollY}px`;
       });
     }
+
+    big_image.addEventListener('click', function () {
+      const scrollY = document.body.style.top;
+      big_image.style.display = 'none';
+      document.body.style.position = '';
+      window.scrollTo(0, parseInt(scrollY || '0') * -1);
+    });
   </script>
 </body>
 
