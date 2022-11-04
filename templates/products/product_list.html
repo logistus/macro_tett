@@ -10,7 +10,11 @@
     </a>
     <div>{{ product.expiry_date }}<br>({{ product.expiry_date|timeuntil }})</div>
     <div class="product--left">
-      <div>M: {{ prodcut.is_macropicks }}</div>
+      <div>
+        {% if product.is_macropicks %}
+        <strong>M</strong>
+        {% endif %}
+      </div>
       <form action="{% url 'product_delete' product.id %}" method="post" id="delete_form">
         {% csrf_token %}
         <button type="submit" class="btn btn_delete" onclick="return confirm('Emin misiniz?');">Sil</button>
