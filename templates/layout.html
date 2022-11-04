@@ -24,6 +24,7 @@
   <script>
     let product_images = document.querySelectorAll('.product_image');
     let big_image = document.querySelector('.big_image');
+    let scrollTop;
 
 
     for (let i = 0; i < product_images.length; i++) {
@@ -33,16 +34,16 @@
         big_image.style.width = '100vw';
         big_image.style.height = '100vh';
         big_image.style.backgroundImage = 'url("' + product_image + '")';
-        document.body.style.position = 'fixed';
+        document.body.style.overflow = 'hidden';
+        let fromTop = document.querySelector("body").getBoundingClientRect().top;
+        big_image.addEventListener('click', function () {
+          big_image.style.display = 'none';
+          document.body.style.overflow = 'auto';
+          window.scrollTo(0, fromTop * -1);
+          console.log(fromTop * -1);
+        });
       });
     }
-
-    big_image.addEventListener('click', function () {
-      const scrollY = document.body.style.top;
-      big_image.style.display = 'none';
-      document.body.style.position = '';
-      window.scrollTo(0, parseInt(scrollY || '0') * -1);
-    });
   </script>
 </body>
 
