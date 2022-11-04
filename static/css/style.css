@@ -63,6 +63,11 @@ nav>ul>li>a {
   margin-bottom: 20px;
 }
 
+.product--left {
+  display: flex;
+  flex-direction: row;
+}
+
 .product_image>img {
   width: 125px !important;
   height: 125px !important;

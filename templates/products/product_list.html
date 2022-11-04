@@ -9,10 +9,13 @@
       <image src="/media/{{ product.product_image }}" alt="product" />
     </a>
     <div>{{ product.expiry_date }}<br>({{ product.expiry_date|timeuntil }})</div>
-    <form action="{% url 'product_delete' product.id %}" method="post" id="delete_form">
-      {% csrf_token %}
-      <button type="submit" class="btn btn_delete" onclick="return confirm('Emin misiniz?');">Sil</button>
-    </form>
+    <div class="product--left">
+      <div>{{ prodcut.is_macropicks }}</div>
+      <form action="{% url 'product_delete' product.id %}" method="post" id="delete_form">
+        {% csrf_token %}
+        <button type="submit" class="btn btn_delete" onclick="return confirm('Emin misiniz?');">Sil</button>
+      </form>
+    </div>
   </div>
   {% endfor %}
 </div>
