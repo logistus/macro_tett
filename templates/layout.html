@@ -26,6 +26,7 @@
     let big_image = document.querySelector('.big_image');
     big_image.addEventListener('click', function () {
       big_image.style.display = 'none';
+      document.body.style.position = '';
     });
 
     for (let i = 0; i < product_images.length; i++) {
@@ -35,6 +36,7 @@
         big_image.style.width = '100vw';
         big_image.style.height = '100vh';
         big_image.style.backgroundImage = 'url("' + product_image + '")';
+        document.body.style.position = 'fixed';
       });
     }
   </script>
