@@ -46,7 +46,7 @@ nav>ul>li>a {
 
 .product {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   border: 1px solid #adadad;
   padding: 10px;
