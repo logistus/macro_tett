@@ -6,16 +6,9 @@ from django.urls import reverse_lazy
 from products.forms import CreateProductForm
 
 
-def home(request):
-    products = Product.objects.all().order_by('expiry_date')
-    context = {
-        'products': products
-    }
-    return render(request, 'index.html', context)
-
-
 class ProductListView(generic.ListView):
     model = Product
+    paginate_by = 2
     fields = ['product_image', 'expiry_date']
     queryset = Product.objects.all().order_by('expiry_date')
     context_object_name = 'products'
