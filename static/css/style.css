@@ -18,6 +18,10 @@ body {
 nav {
   background-color: black;
   color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
 nav>ul {
@@ -26,7 +30,7 @@ nav>ul {
   list-style-type: none;
   justify-content: space-between;
   margin: 0;
-  padding: 10px;
+  padding: 20px;
 }
 
 nav>ul>li>a {
@@ -35,6 +39,9 @@ nav>ul>li>a {
 
 .content {
   margin: 20px;
+  position: relative;
+  top: 60px;
+  z-index: -1;
 }
 
 .products {
