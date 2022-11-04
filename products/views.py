@@ -8,7 +8,7 @@ from products.forms import CreateProductForm
 
 class ProductListView(generic.ListView):
     model = Product
-    paginate_by = 2
+    paginate_by = 10
     fields = ['product_image', 'expiry_date']
     queryset = Product.objects.all().order_by('expiry_date')
     context_object_name = 'products'
