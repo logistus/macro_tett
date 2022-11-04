@@ -65,7 +65,9 @@ nav>ul>li>a {
 
 .product--left {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-self: stretch;
+  justify-content: space-between;
 }
 
 .product_image>img {
