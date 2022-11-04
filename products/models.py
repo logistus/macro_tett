@@ -7,6 +7,7 @@ from django_resized import ResizedImageField
 class Product(models.Model):
     product_image = ResizedImageField(scale=0.5, upload_to='products')
     expiry_date = models.DateField()
+    is_macropicks = models.BooleanField(default=False, null=True, blank=True)
 
     def delete(self, *args, **kwargs):
         os.remove(os.path.join(settings.MEDIA_ROOT, self.product_image.name))
