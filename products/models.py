@@ -1,7 +1,4 @@
 from django.db import models
-from PIL import Image, ImageOps
-import os
-from django.conf import settings
 from django_resized import ResizedImageField
 
 
