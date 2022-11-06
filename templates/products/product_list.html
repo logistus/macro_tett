@@ -23,7 +23,7 @@
     <div class="product--left">
       <div>
         {% if product.is_macropicks %}
-        <strong>M</strong>
+        <img src="{% static 'macropicks.png' %}" alt="Macropicks" />
         {% endif %}
       </div>
       <form action="{% url 'product_delete' product.id %}" method="post" id="delete_form">
