@@ -142,8 +142,10 @@ nav>ul>li>a {
   height: 15px;
 }
 
-.info {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
+.align-left {
+  text-align: left;
+}
+
+.align-right {
+  text-align: right;
 }
