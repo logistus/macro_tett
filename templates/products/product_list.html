@@ -3,6 +3,10 @@
 
 {% block content %}
 {% if products %}
+<div class="info">
+  <div><strong>Wynhouse Macrocenter</strong> (6628)</div>
+  <div><strong>Toplam Kayıt: </strong> {{ products.count }}</div>
+</div>
 <div class="pagination">
   <a href="?page=1" class="page">İlk Sayfa</a>
   {% for i in page_obj.paginator.page_range %}
