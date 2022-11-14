@@ -14,13 +14,15 @@
   const input_file = document.getElementById('id_product_image');
   const progress_bar = document.getElementById('progress');
 
+  progress_bar.style.visibility = 'hidden';
+
   $("#add_product_form").submit(function (e) {
     e.preventDefault();
     $form = $(this)
     var formData = new FormData(this);
     const media_data = input_file.files[0];
     if (media_data != null) {
-      progress_bar.style.display = 'block';
+      progress_bar.style.visibility = 'visible';
     }
 
     $.ajax({
