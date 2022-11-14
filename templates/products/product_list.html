@@ -3,7 +3,7 @@
 
 {% block content %}
 {% if products %}
-<div class="align-right" style="padding: 10px;"><strong>Toplam Kayıt: </strong> {{ page_obj.paginator.count }}</div>
+<div class="align-center" style="padding: 20px;"><strong>Toplam Kayıt: </strong> {{ page_obj.paginator.count }}</div>
 <div class="pagination">
   <a href="?page=1" class="page">İlk Sayfa</a>
   {% for i in page_obj.paginator.page_range %}
