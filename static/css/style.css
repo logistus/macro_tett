@@ -46,6 +46,7 @@ nav>ul>li>a {
   margin: 20px;
   position: relative;
   top: 60px;
+  padding-bottom: 1px;
 }
 
 .products {
@@ -128,4 +129,16 @@ nav>ul>li>a {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;
+}
+
+#progress {
+  margin: 10px;
+  height: 15px;
+  border: 1px solid #4a4a4a;
+  display: none;
+}
+
+.process {
+  background-color: green;
+  height: 15px;
 }

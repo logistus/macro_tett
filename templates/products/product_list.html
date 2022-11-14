@@ -4,7 +4,7 @@
 {% block content %}
 {% if products %}
 <div class="pagination">
-  <a href="?page=1" class="page">&laquo;</a>
+  <a href="?page=1" class="page">İlk Sayfa</a>
   {% for i in page_obj.paginator.page_range %}
   {% if page_obj.number == i %}
   <span class="page current">{{ i }}</span>
@@ -12,7 +12,7 @@
   <a href="?page={{i}}" class="page">{{ i }}</a>
   {% endif %}
   {% endfor %}
-  <a href="?page={{ page_obj.paginator.num_pages }}" class="page">&raquo;</a>
+  <a href="?page={{ page_obj.paginator.num_pages }}" class="page">Son Sayfa</a>
 </div>
 <div class="products">
   {% for product in products %}
@@ -36,7 +36,7 @@
   {% endfor %}
 </div>
 <div class="pagination">
-  <a href="?page=1" class="page">&laquo;</a>
+  <a href="?page=1" class="page">İlk Sayfa</a>
   {% for i in page_obj.paginator.page_range %}
   {% if page_obj.number == i %}
   <span class="page current">{{ i }}</span>
@@ -44,7 +44,7 @@
   <a href="?page={{i}}" class="page">{{ i }}</a>
   {% endif %}
   {% endfor %}
-  <a href="?page={{ page_obj.paginator.num_pages }}" class="page">&raquo;</a>
+  <a href="?page={{ page_obj.paginator.num_pages }}" class="page">Son Sayfa</a>
 </div>
 {% else %}
 Eklenmiş ürün bulunamadı.
